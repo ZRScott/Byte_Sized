@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Google Voice Suite
 // @namespace    http://tampermonkey.net/
-// @version      2.1.1
+// @version      2.1.2
 // @description  Remove sidebar, thread tagger, and message tools for Google Voice
 // @author       Zac Scott
 // @match        https://voice.google.com/u/*
