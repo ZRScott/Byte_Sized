@@ -5,6 +5,8 @@
 // @match        *://*/*
 // @grant        GM_openInTab
 // @icon         https://www.svgrepo.com/show/165233/coin.svg
+// @updateURL    https://raw.githubusercontent.com/ZRScott/Byte_Sized/main/RCA-Points.user.js
+// @downloadURL  https://raw.githubusercontent.com/ZRScott/Byte_Sized/main/RCA-Points.user.js
 // ==/UserScript==
 
 (function() {
