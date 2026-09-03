@@ -1,0 +1,248 @@
+// ==UserScript==
+// @name         Add Student Names to Attendance
+// @namespace    http://tampermonkey.net/
+// @version      2.0
+// @description  Adds student names with RCA Points buttons next to attendance radio buttons
+// @author       You
+// @match        *://*/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // Category configuration from RCA Points script
+    const categories = [
+        { name: 'Academics', icon: 'https://www.svgrepo.com/show/362093/flask.svg' },
+        { name: 'Communication', icon: 'https://www.svgrepo.com/show/298752/chat-live.svg' },
+        { name: 'Participation', icon: 'https://www.svgrepo.com/show/440541/alien-2.svg' },
+        { name: 'Effort', icon: 'https://www.svgrepo.com/show/509041/building.svg' },
+        { name: 'Good Character', icon: 'https://www.svgrepo.com/show/532906/book-open.svg' },
+        { name: 'School Spirit', icon: 'https://www.svgrepo.com/show/396473/fire.svg' },
+        { name: 'Attended Live Lesson', icon: 'https://www.svgrepo.com/show/530257/figure.svg' },
+        { name: 'Other', icon: 'https://www.svgrepo.com/show/171584/sand-castle.svg' }
+    ];
+
+    // Add CSS for buttons and animations
+    const style = document.createElement('style');
+    style.textContent = `
+        .rca-buttons-container {
+            display: inline-flex;
+            gap: 4px;
+            margin-left: 10px;
+            align-items: center;
+        }
+
+        .rca-category-btn {
+            width: 24px;
+            height: 24px;
+            padding: 2px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .rca-category-btn:hover {
+            transform: scale(1.15);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            border-color: #999;
+        }
+
+        .rca-category-btn img {
+            width: 16px;
+            height: 16px;
+            display: block;
+        }
+
+        .rca-tooltip {
+            position: absolute;
+            background: #333;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-4px);
+            z-index: 10001;
+        }
+
+        .rca-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 4px solid #333;
+        }
+
+        .rca-category-btn:hover .rca-tooltip {
+            opacity: 1;
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Function to create RCA buttons for a student
+    function createRCAButtons(fullName) {
+        const container = document.createElement('div');
+        container.className = 'rca-buttons-container';
+
+        categories.forEach(category => {
+            const btn = document.createElement('button');
+            btn.className = 'rca-category-btn';
+            btn.type = 'button';
+
+            const img = document.createElement('img');
+            img.src = category.icon;
+            img.alt = category.name;
+
+            const tooltip = document.createElement('div');
+            tooltip.className = 'rca-tooltip';
+            tooltip.textContent = category.name;
+
+            btn.appendChild(img);
+            btn.appendChild(tooltip);
+
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const url = `https://app.rcahousepoints.com/staff/dashboard/award-points#autofill=${encodeURIComponent(fullName)}&category=${encodeURIComponent(category.name)}`;
+                window.open(url, '_blank');
+            });
+
+            container.appendChild(btn);
+        });
+
+        return container;
+    }
+
+    // Function to add names to attendance cells
+    function addStudentNames() {
+        // Get all rows in the table
+        const rows = document.querySelectorAll('tbody tr');
+
+        if (rows.length === 0) {
+            console.log('No rows found');
+            return;
+        }
+
+        let namesAdded = 0;
+
+        rows.forEach(row => {
+            const lastNameCell = row.querySelector('#lastName');
+            const firstNameCell = row.querySelector('#firstName');
+
+            if (lastNameCell && firstNameCell) {
+                const lastName = lastNameCell.textContent.trim();
+                const firstName = firstNameCell.textContent.trim();
+
+                // Check if name cell hasn't already been added
+                if (!row.querySelector('.student-name-cell')) {
+                    const fullName = `${firstName} ${lastName}`;
+
+                    // Create a new table cell
+                    const nameCell = document.createElement('td');
+                    nameCell.className = 'student-name-cell';
+                    nameCell.style.fontWeight = 'bold';
+                    nameCell.style.color = '#333';
+                    nameCell.style.padding = '8px';
+                    nameCell.style.whiteSpace = 'nowrap';
+
+                    // Create a wrapper div to hold both name and buttons
+                    const wrapper = document.createElement('div');
+                    wrapper.style.display = 'flex';
+                    wrapper.style.alignItems = 'center';
+                    wrapper.style.gap = '10px';
+
+                    // Add the name text
+                    const nameText = document.createElement('span');
+                    nameText.textContent = fullName;
+                    wrapper.appendChild(nameText);
+
+                    // Add RCA buttons
+                    const rcaButtons = createRCAButtons(fullName);
+                    wrapper.appendChild(rcaButtons);
+
+                    // Add wrapper to cell
+                    nameCell.appendChild(wrapper);
+
+                    // Insert the new cell before the lastName cell
+                    lastNameCell.parentNode.insertBefore(nameCell, lastNameCell);
+                    namesAdded++;
+                }
+            }
+        });
+
+        console.log(`Added ${namesAdded} student names with RCA buttons to table`);
+    }
+
+    // Function to reorganize table headers
+    function reorganizeHeaders() {
+        // Find the header row by looking for the sort buttons
+        const lastButton = document.querySelector('button[aria-label*="Sort by Last"]');
+        const firstButton = document.querySelector('button[aria-label*="Sort by First"]');
+
+        if (lastButton && firstButton) {
+            const lastHeaderCell = lastButton.closest('th');
+            const firstHeaderCell = firstButton.closest('th');
+
+            if (lastHeaderCell && firstHeaderCell && !lastHeaderCell.classList.contains('header-moved')) {
+                // Create a new header cell for "Name"
+                const nameHeaderCell = document.createElement('th');
+                nameHeaderCell.className = 'student-name-header';
+                nameHeaderCell.innerHTML = '<div style="padding: 8px; font-weight: bold;">Name</div>';
+
+                // Insert the new header before the lastName header
+                lastHeaderCell.parentNode.insertBefore(nameHeaderCell, lastHeaderCell);
+
+                // Mark as moved to prevent duplicate operations
+                lastHeaderCell.classList.add('header-moved');
+
+                console.log('Header reorganized');
+            }
+        }
+    }
+
+    // Wait for the page to fully load
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            reorganizeHeaders();
+            addStudentNames();
+        });
+    } else {
+        // DOM already loaded
+        reorganizeHeaders();
+        addStudentNames();
+    }
+
+    // Also observe for dynamic content changes
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.addedNodes.length) {
+                reorganizeHeaders();
+                addStudentNames();
+            }
+        });
+    });
+
+    // Start observing the document body for changes
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+
+})();
