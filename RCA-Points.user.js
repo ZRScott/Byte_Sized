@@ -22,6 +22,7 @@
         { name: 'Participation',  icon: 'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXJ0YjFrbzNnMGhtcnFtMHdqeDhzeW9xOW52Zm9yc2R0enNjNjI3bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/3ohhwJPSL00H2r6Rhe/giphy.gif' },
         { name: 'Effort',         icon: 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjVwc3ZxcnJoOGs1ZG53cm94ZjgzZmlrMGxjeW9ydGpqNWltMW5jMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/FuYkStU1jDOMFLR2Pc/giphy.gif' },
         { name: 'Good Character', icon: 'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzN3dm05anZxbjV6cWxveXR4ZXJpcWI2Z2M3c2U2OW9pdjdtZzlldCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/L4TtYKVImi8MYzpJnL/giphy.gif' },
+        { name: 'Attended Live Lesson',  icon: 'https://www.svgrepo.com/show/530257/figure.svg' },
         { name: 'School Spirit',  icon: 'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExajFnM3l4YmgzemhrODlvczJhbHJ6NjRncGF1cmVodzY2aWIxa29nYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/TihQpMaVrcBgqfGuVx/giphy.gif' },
         { name: 'Other',          icon: 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHU3b2I5enJobnliZXBqam93a3EzN2thYmZkZjEwajYxM255YXlsOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/oyeC4P4ckSF3i/giphy.gif' }
     ];
