@@ -1,0 +1,32 @@
+1. Click + -> + Create new file
+
+2. Name your file, do not use spaces. End file name with .user.js (example: My_New_Tech_Tool.user.js)
+
+3. Paste all code "Script" into editer
+
+4. Add two new lines in the // ==/UserScript== area
+
+    // @updateURL    https://raw.githubusercontent.com/ZRScott/Byte_Sized/main/
+    // @downloadURL  https://raw.githubusercontent.com/ZRScott/Byte_Sized/main/
+
+   EXAMPLE:
+// ==UserScript==
+// @name         My New Tech Tool
+// @namespace    http://tampermonkey.net/
+// @version      1.0
+// @match        *://*/*
+// @grant        GM_openInTab
+// @icon         https://www.svgrepo.com/show/165233/coin.svg
+// @updateURL    https://raw.githubusercontent.com/ZRScott/Byte_Sized/main/         <---- New row
+// @downloadURL  https://raw.githubusercontent.com/ZRScott/Byte_Sized/main/         <---- New row
+// ==/UserScript==
+
+5. Add your files name to the end of the new lines
+
+      Example:  https://raw.githubusercontent.com/ZRScott/Byte_Sized/main/My_New_Tech_Tool.user.js
+
+6. Click Commit Changes...
+
+
+8. Test out the URL you just made by pasting it into the browser, it should auto-open tampermonkey and ask to install
+
