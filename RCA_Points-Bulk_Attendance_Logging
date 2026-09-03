@@ -6,8 +6,8 @@
 // @author       You
 // @match        *://*/*
 // @grant        none
-// @updateURL    https://raw.githubusercontent.com/ZRScott/Byte_Sized/main/RCA%20Points%20-%20Bulk%20Attendance%20Logging.user.js
-// @downloadURL  https://raw.githubusercontent.com/ZRScott/Byte_Sized/main/RCA%20Points%20-%20Bulk%20Attendance%20Logging.user.js
+// @updateURL    https://raw.githubusercontent.com/ZRScott/Byte_Sized/main/RCA_Points-Bulk_Attendance_Logging.user.js
+// @downloadURL  https://raw.githubusercontent.com/ZRScott/Byte_Sized/main/RCA_Points-Bulk_Attendance_Logging.user.js
 // ==/UserScript==
 
 (function() {
