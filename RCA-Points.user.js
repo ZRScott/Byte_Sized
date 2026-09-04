@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         RCA Points
 // @namespace    http://tampermonkey.net/
-// @version      5.4.5
+// @version      5.4.6
 // @match        *://*/*
 // @grant        GM_openInTab
 // @icon         https://www.svgrepo.com/show/165233/coin.svg
