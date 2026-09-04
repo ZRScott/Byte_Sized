@@ -5,8 +5,8 @@
 // @description  Open multiple student scheduler, logs, or RCA points tabs from selected checkboxes + ID bulk checker + notes + alarm contact label + phone
 // @match        https://www.connexus.com/sectionsandstudents*
 // @grant        GM_xmlhttpRequest
-// @updateURL    https://raw.githubusercontent.com/ZRScott/Byte_Sized/main/RCA-Points.user.js
-// @downloadURL  https://raw.githubusercontent.com/ZRScott/Byte_Sized/main/RCA-Points.user.js
+// @updateURL    https://github.com/ZRScott/Byte_Sized/raw/refs/heads/main/Sections&Students.user.js
+// @downloadURL  https://github.com/ZRScott/Byte_Sized/raw/refs/heads/main/Sections&Students.user.js
 // @connect      connexus.com
 // @icon         https://www.svgrepo.com/show/440478/atronaut.svg
 // ==/UserScript==
