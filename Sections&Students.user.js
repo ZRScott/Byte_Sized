@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Sections & Students EDIT
+// @name         Sections & Students
 // @namespace    http://tampermonkey.net/
 // @version      3.4
 // @description  Open multiple student scheduler, logs, or RCA points tabs from selected checkboxes + ID bulk checker + notes + alarm contact label + phone
