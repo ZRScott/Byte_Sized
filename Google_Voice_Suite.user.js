@@ -9,8 +9,8 @@
 // @grant        GM_getValue
 // @grant        GM_setValue
 // @icon         https://www.svgrepo.com/show/452085/phone.svg
-// @updateURL    https://raw.githubusercontent.com/ZRScott/Byte_Sized/main/google-voice-suite.user.js
-// @downloadURL  https://raw.githubusercontent.com/ZRScott/Byte_Sized/main/google-voice-suite.user.js
+// @updateURL    https://raw.githubusercontent.com/ZRScott/Byte_Sized/main/Google_Voice_Suite.user.js
+// @downloadURL  https://raw.githubusercontent.com/ZRScott/Byte_Sized/main/Google_Voice_Suite.user.js
 // ==/UserScript==
 
 (function () {
