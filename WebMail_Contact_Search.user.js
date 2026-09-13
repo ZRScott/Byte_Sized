@@ -10,6 +10,8 @@
 // @grant        GM_getValue
 // @run-at       document-idle
 // @icon         https://www.svgrepo.com/show/366246/mail-mark-read.svg
+// @updateURL    https://raw.githubusercontent.com/ZRScott/Byte_Sized/main/WebMail_Contact_Search.user.js
+// @downloadURL  https://raw.githubusercontent.com/ZRScott/Byte_Sized/main/WebMail_Contact_Search.user.js
 // ==/UserScript==
 
 (function () {
