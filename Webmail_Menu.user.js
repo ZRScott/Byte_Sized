@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         WebMail Menu Grade Book,Transcript, Log Search, STARmail, Assessments Completed
+// @name         WebMail Menu Grade Book,Transcript, Attendance, STARmail, Assessments Completed
 // @namespace    http://tampermonkey.net/
 // @version      1.5
 // @description  Dynamically modify menu, add buttons
