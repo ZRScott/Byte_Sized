@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Sections & Students
 // @namespace    http://tampermonkey.net/
-// @version      3.4
+// @version      4.4
 // @description  Open multiple student scheduler, logs, or RCA points tabs from selected checkboxes + ID bulk checker + notes + alarm contact label + phone
 // @match        https://www.connexus.com/sectionsandstudents*
 // @grant        GM_xmlhttpRequest
