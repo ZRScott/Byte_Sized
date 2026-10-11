@@ -19,6 +19,7 @@
     const categories = [
         { name: 'Academics',      icon: 'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExejgxb2Y0dzQ0ZHBjZHBvZ3I0N2VpMmJlYThqMHAzeGlvaTYxaHNjYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9dHM/srJTsYwToaIg5rTT8T/giphy.gif' },
         { name: 'Communication',  icon: 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExanVremF3ajhsMTBueGVvaGhhN3B6ZzRpbDFvajB6enJuZTl4cTd2NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Q5eCrf8a77NCerbmdf/giphy.gif' },
+        { name: 'Self Advocacy', icon: 'https://www.svgrepo.com/show/154665/shield-with-check-mark.svg' },
         { name: 'Participation',  icon: 'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXJ0YjFrbzNnMGhtcnFtMHdqeDhzeW9xOW52Zm9yc2R0enNjNjI3bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/3ohhwJPSL00H2r6Rhe/giphy.gif' },
         { name: 'Effort',         icon: 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjVwc3ZxcnJoOGs1ZG53cm94ZjgzZmlrMGxjeW9ydGpqNWltMW5jMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/FuYkStU1jDOMFLR2Pc/giphy.gif' },
         { name: 'Good Character', icon: 'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzN3dm05anZxbjV6cWxveXR4ZXJpcWI2Z2M3c2U2OW9pdjdtZzlldCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/L4TtYKVImi8MYzpJnL/giphy.gif' },
