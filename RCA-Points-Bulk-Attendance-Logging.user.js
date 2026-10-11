@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Add Student Names to Attendance
 // @namespace    http://tampermonkey.net/
-// @version      2.0
+// @version      3.0
 // @description  Adds student names with RCA Points buttons next to attendance radio buttons
 // @author       You
 // @match        *://*/*
