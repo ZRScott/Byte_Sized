@@ -787,6 +787,7 @@
     const RCA_CATEGORIES = [
         'Academics',
         'Communication',
+        'Self Advocacy',
         'Effort',
         'Good Character',
         'Other',
