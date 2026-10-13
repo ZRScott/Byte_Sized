@@ -788,6 +788,7 @@
         'Academics',
         'Communication',
         'Self Advocacy',
+        'Homeroom Touch Base',
         'Effort',
         'Good Character',
         'Other',
