@@ -18,6 +18,7 @@
         { name: 'Academics', icon: 'https://www.svgrepo.com/show/362093/flask.svg' },
         { name: 'Communication', icon: 'https://www.svgrepo.com/show/298752/chat-live.svg' },
         { name: 'Self Advocacy', icon: 'https://www.svgrepo.com/show/154665/shield-with-check-mark.svg' },
+        { name: 'Homeroom Touch Base', icon: 'https://www.svgrepo.com/show/425933/users.svg' },
         { name: 'Participation', icon: 'https://www.svgrepo.com/show/440541/alien-2.svg' },
         { name: 'Effort', icon: 'https://www.svgrepo.com/show/509041/building.svg' },
         { name: 'Good Character', icon: 'https://www.svgrepo.com/show/532906/book-open.svg' },
